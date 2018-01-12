@@ -1,0 +1,67 @@
+page-contas {
+    
+    .formulario{
+        padding: 1em;
+        background-color: white;
+    }    
+
+    ion-col{
+        // padding: 1em;
+        margin-bottom: 10px;
+    }
+
+    .valor{
+        color: black;
+        font-size: 5rem;
+    }
+
+    .tipo-de-gasto{
+        font-size: 1.5em;
+        margin-bottom: 0.5em;
+        // color: #dcdcdc;
+    }
+
+    .credito{
+       color: #4caf50!important;
+    }
+    .debito{
+       color: #f44336;
+    }
+
+    input{
+        height: 1em;
+        width: 1em;
+    }
+     ion-icon, .categoria{
+        color: black;
+        font-size: 2em;
+    }
+
+    .titulo{
+        color: #488aff;
+        font-size: 2em;
+    }
+
+    .cont{
+        
+        padding-bottom: 1.5em;
+    }
+    
+    ion-fab[bottom]{
+        top: 0;
+        height: 4px;
+    }
+    ion-select{
+        font-size: 1em;
+    }
+
+    *{-webkit-tap-highlight-color: black;}
+
+    ion-content{
+        background-color: white !important;
+    }
+
+    .text-input[disabled]{
+        opacity: 1!important;
+    }
+}

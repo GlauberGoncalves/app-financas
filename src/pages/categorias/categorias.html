@@ -1,0 +1,37 @@
+<!--
+  Generated template for the CategoriasPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>categorias</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <!-- <ion-list>
+        <button ion-item *ngFor="let item of itens" (click)="itemSelected(item)">
+          {{ item }}
+        </button>  
+      </ion-list> -->
+
+
+      <ion-list>
+
+        <ion-item-sliding #iteme *ngFor="let item of itens" (click)='selecionarCategoria(item)'>
+          <ion-item>
+            {{ item.nome }}
+          </ion-item>
+          <ion-item-options side="right">
+            <button ion-button color="verde" (click)="altera(item.id)">Editar</button>
+            <button ion-button color="danger" (click)="delete(item.id)">Excluir</button>
+          </ion-item-options>
+        </ion-item-sliding>
+
+      </ion-list>
+</ion-content>

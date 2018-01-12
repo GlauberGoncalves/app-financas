@@ -1,0 +1,51 @@
+<ion-content> 
+  
+   <ion-card>
+    <ion-card-header text-center style='border-top: 3px solid rgba(109,189,232,1)'>
+      {{ mesAtual() }}    
+        <hr>
+    </ion-card-header>
+  
+    <!-- <ion-card-content> -->
+  
+      <ion-grid>
+  
+        <ion-row>
+          <ion-col col-6>Créditos</ion-col>
+          <ion-col col-6 text-right>R$ <span class="txt-verde">{{ creditos }}</span></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-6>Débitos</ion-col>
+            <ion-col col-6 text-right>R$ <span class="txt-vermelho">{{ debitos}}</span></ion-col>
+        </ion-row>      
+        <ion-row style="border-top: 1px solid rgba(109,189,232,1)">          
+            <ion-col col-6>Total</ion-col>
+            <ion-col col-6 text-right>R$ {{ total }}</ion-col>            
+        </ion-row>  
+      </ion-grid>    
+    <!-- </ion-card-content> -->
+  </ion-card>
+
+
+  <ion-list>
+      <ion-item-sliding #iteme *ngFor="let item of contas">
+        <ion-item>
+          <h2>Categoria: {{ item.categoria }}</h2>
+          <h4>Tipo: {{ item.tipo }}</h4>
+          <h4>Descricão {{ item.descricao }}</h4>
+          <h4>R${{ item.valor }}</h4>
+        </ion-item>                              
+        <ion-item-options side="right">
+          <button ion-button color="verde" (click)="altera(item.id)">Editar</button>
+          <button ion-button color="danger" (click)="delete(item.id)">Excluir</button>
+        </ion-item-options>
+      </ion-item-sliding>
+  </ion-list>
+
+<ion-fab right bottom >
+    <button color='danger' ion-fab (click)='abrirModalContas()'>
+      <ion-icon name="add"></ion-icon>
+    </button> 
+</ion-fab>
+
+  </ion-content>

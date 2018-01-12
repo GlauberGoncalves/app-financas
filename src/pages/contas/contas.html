@@ -1,0 +1,110 @@
+<!-- <ion-header>
+  <ion-navbar color=primary>
+    <button ion-button><<<</button>
+    <ion-title>Adicionar Valores</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-header>
+    <ion-toolbar color='primary'>
+      <ion-buttons start>
+        <button ion-button icon-only color="royal" (click)='fecharContas()'>
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Inserir conta</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content color='branco' scroll="false">
+
+  <div class="formulario">
+    <ion-grid>
+
+      <!-- Visor valor -->
+      <ion-row>
+        <ion-col col-12>
+            <div class="cont">
+          <div class="valor" text-center (click)='presentModalValor()'>
+            R$ {{ visor }}
+          </div>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      <!-- Radio tipo de conta -->
+      <!-- <ion-row> -->
+
+        <ion-list radio-group [(ngModel)]="tipo">            
+          <ion-row>
+          <ion-item col-6>
+            <ion-label>Débito</ion-label>
+            <ion-radio value="debito"></ion-radio>
+          </ion-item>
+        
+          <ion-item col-6>
+            <ion-label>Crédito</ion-label>
+            <ion-radio value="credito"></ion-radio>
+          </ion-item>
+        </ion-row>
+        </ion-list>
+
+          <!-- <ion-col col-4>
+            <div class="tipo-de-gasto">               
+               <input type="radio" name="tipogasto">
+               <label class="credito">Crédito</label>
+            </div>
+          </ion-col>
+          <ion-col col-4>
+            <div class="tipo-de-gasto">              
+              <input type="radio" name="tipogasto">
+              <label class="debito">Débito</label>
+            </div>
+          </ion-col>
+          <br> -->
+      <!-- </ion-row> -->
+
+      <!-- Categorias -->
+      <ion-row>
+          <ion-col col-12>
+          <ion-list>
+              <ion-item>
+                  <ion-label color="primary" fixed>Categoria</ion-label>
+                  <ion-input id='categoria' type="tel" value="{{ categoria }}" (click)='presentModalCategorias()' disabled placeholder="Ex: Alimentação"></ion-input>
+                </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+
+        <!-- Calendario -->
+        <ion-row>
+          <ion-item>
+            <ion-label>Dia</ion-label>
+            <ion-datetime id='data' displayFormat="DD/MM/YYYY" [(ngModel)]="data"></ion-datetime>
+          </ion-item> 
+        </ion-row>
+          
+        <!-- Descrição -->
+          <ion-row>
+              <ion-col col-2 text-center>
+                <ion-icon id='ios-paper-outline'></ion-icon>          
+              </ion-col>
+              <ion-col col-8>
+                  <ion-item>
+                      <ion-label stacked>Descrição</ion-label>
+                      <ion-input [(ngModel)]="descricao" id='descricao' type="text" value="" ></ion-input>
+                    </ion-item>
+              </ion-col>
+            </ion-row>  
+
+            <!-- Botão inserir -->
+            <ion-row>
+              <ion-col col-12>
+                  <button ion-button full (click)='insereConta()'>Inserir</button>
+              </ion-col>
+            </ion-row>        
+    </ion-grid>
+  </div>
+  
+      
+  </ion-content>
